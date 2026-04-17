@@ -53,6 +53,13 @@ jobs:
         github_token: ${{ secrets.DOCS_TOKEN }}
         publish_dir: source/_site
 
+    - name: Send webhook
+      if: always()
+      run: |
+         curl -X POST ${{ secrets.WEBHOOK_URL }} \
+           -H "Content-Type: application/json" \
+           -d "{\"status\":\"${{ job.status }}\"}"
+
   # Deployment job
   deploy:
     environment:
