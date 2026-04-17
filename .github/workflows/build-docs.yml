@@ -22,7 +22,7 @@ jobs:
         run: |
           curl -v -f -X POST ${{ secrets.WEBHOOK_URL }} \
             -H "Content-Type: application/json" \
-            -d "{\"content\":\"Starting to run a docs build for arcade.\"}"
+            -d "{\"content\":\"Running a docs build for arcade.\"}"
 
       - name: Checkout docs repo
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
         run: |
           curl -v -f -X POST ${{ secrets.WEBHOOK_URL }} \
             -H "Content-Type: application/json" \
-            -d "{\"content\":\"${{ job.status }}\"}"
+            -d "{\"content\":\"Finished with: ${{ job.status }}\"}"
 
   deploy:
     environment:
