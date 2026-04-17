@@ -1,2 +1,2 @@
-# arcade.github.io
-A github repo to store documentation about arcade
+# arcade-docs
+A github repo to store documentation about makers collective arcade vrchat room
