@@ -53,6 +53,7 @@ jobs:
         github_token: ${{ secrets.DOCS_TOKEN }}
         publish_dir: source/_site
 
+    # Update our discord with the build status
     - name: Send webhook
       if: always()
       run: |
